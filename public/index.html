@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>即期品專區</title>
+    <link rel="stylesheet" href="css/style.css"/>
+    <script src="js/main_screen.js" defer></script>
+    <script src="js/input_screen.js" defer></script>
+    <script src="js/app.js" defer></script>
+    <script src="js/script.js" defer></script>
+  </head>
+  <body>
+    <section id="main_screen">
+      <h1>即期品專區</h1>
+      <div class="item_list"></div>
+      <div>
+        <button id="add_product">新增即期商品</button>
+      </div>
+    </section>
+    <section id="input_screen" class="inactive">
+      <form>
+        <h1>新增即期品</h1>
+        <p>產品名稱<input type="text" class="form_name"></p>
+        <p>原始售價<input type="text" class="form_price"></p>
+        <p>折扣後價格<input tpye="text" class="form_sale"></p>
+        <p>保存期限<input tpye="date" class="form_date"></p>
+        <p>產品圖片url<input type="url" class="form_url"></p>
+        <input type="submit">
+      </form>
+    </section>
+  </body>
+</html>
