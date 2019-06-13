@@ -17,36 +17,18 @@ async function main() {
 
   // The "process.env.MONGODB_URI" is needed to work with Heroku.
   db = await MongoClient.connect(process.env.MONGODB_URI || MONGO_URL);
-  collection=db.collection('test');
-  const obj={
-    name:"milk",
-    price:70,
-    sale:60,
-    expired_date:2019-06-01,
-    img_url:"http://i.epochtimes.com/assets/uploads/2018/02/4f4f82c54ca99523fb9d4caa2c3e82cd-e1518177152828-600x400.jpg"
-  };
-  const obj2={
-    name:"bread",
-    price:25,
-    sale:20,
-    expired_date:2019-06-02,
-    img_url:"https://tokyo-kitchen.icook.network/uploads/recipe/cover/194046/large_d6537ca6e737a07d.jpg"
-  };
-  let res=await collection.deleteMany();
+  collection=db.collection('spot-item');
 //  res=await collection.insertOne(obj);
 //  res=await collection.insertOne(obj2);
   // The "process.env.PORT" is needed to work with Heroku.
   const port = process.env.PORT || 3000;
-  await app.listen(port);
+  await app.listen(port);y
   console.log(`Server listening on port ${port}!`);
 };
 main();
 async function onGet(req,res)
 {
-  const query={
-    name:'milk'
-  };
- // let result=await collection.findOne(query);
+
   let cursor=await collection.find().toArray();
 //  console.log(cursor);
   const result=JSON.stringify(cursor);
@@ -63,7 +45,8 @@ async function onPost(req,res)
     price:message_body['price'],
     sale:message_body['sale'],
     expired_date:message_body['expired_date'],
-    url:message_body['url']
+    url:message_body['url'],
+    seller:message_body['seller']
   };
   res=await collection.insertOne(insert_obj);
 }

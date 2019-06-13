@@ -10,12 +10,23 @@
     <script src="js/app.js" defer></script>
     <script src="js/script.js" defer></script>
   </head>
-  <body>
+  <body>  
+    <section id="top">   
+        <div class="back">
+            <div style="height:35px"></div>
+            <img src="images/back.svg" class="inactive">
+        </div>
+        <header>
+            <h1>即期品專區</h1>
+            <p>提供商家顯示即期商品資訊</p>
+            <p>Sell the spot item</p>
+        </header>
+    </section>
     <section id="main_screen">
-      <h1>即期品專區</h1>
       <div class="item_list"></div>
-      <div>
-        <button id="add_product">新增即期商品</button>
+      <div id="add_product">
+        <button class="button" id="add_btn">新增即期商品</button>
+        <!--<button class="button del_btn">刪除選取的商品</button>-->
       </div>
     </section>
     <section id="input_screen" class="inactive">
@@ -25,9 +36,11 @@
         <p>原始售價<input type="text" class="form_price"></p>
         <p>折扣後價格<input tpye="text" class="form_sale"></p>
         <p>保存期限<input tpye="date" class="form_date"></p>
+        <p>販售店家<input tpye="text" class="form_seller"></p>
         <p>產品圖片url<input type="url" class="form_url"></p>
-        <input type="submit">
+        <input type="submit" class="button">
       </form>
     </section>
+    <div style="height:20px"></div>
   </body>
 </html>

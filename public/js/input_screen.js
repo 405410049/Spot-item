@@ -16,12 +16,14 @@ async function post()
     const form_price=document.querySelector('.form_price').value;
     const form_sale=document.querySelector('.form_sale').value;
     const form_date=document.querySelector('.form_date').value;
+    const form_seller=document.querySelector('.form_seller').value;
     const form_url=document.querySelector('.form_url').value;
     const fetch_body={
         name:form_name,
         price:form_price,
         sale:form_sale,
         expired_date:form_date,
+        seller:form_seller,
         url:form_url
     };
     const event_info={
