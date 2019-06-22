@@ -19,8 +19,8 @@ async function main() {
   db = await MongoClient.connect(process.env.MONGODB_URI || MONGO_URL);
   collection=db.collection('spot-item');
   const query={
-    name:null,
-    price:null
+    'name':null,
+    'price':null
   }
   res=await collection.deleteMany(query);
 //  res=await collection.insertOne(obj);
