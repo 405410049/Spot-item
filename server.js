@@ -18,11 +18,16 @@ async function main() {
   // The "process.env.MONGODB_URI" is needed to work with Heroku.
   db = await MongoClient.connect(process.env.MONGODB_URI || MONGO_URL);
   collection=db.collection('spot-item');
+  const query={
+    name:null,
+    price:null
+  }
+  res=await collection.deleteMany(query);
 //  res=await collection.insertOne(obj);
 //  res=await collection.insertOne(obj2);
   // The "process.env.PORT" is needed to work with Heroku.
   const port = process.env.PORT || 3000;
-  await app.listen(port);y
+  await app.listen(port);
   console.log(`Server listening on port ${port}!`);
 };
 main();
