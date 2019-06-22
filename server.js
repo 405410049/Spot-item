@@ -19,13 +19,13 @@ async function main() {
   db = await MongoClient.connect(process.env.MONGODB_URI || MONGO_URL);
   collection=db.collection('spot-item');
   const query={
-    _id:"5d09d572d65cd2001730b647"
+    name:""
   };
   const query2={
     _id:"5d09d590d65cd2001730b648"
   };
-  const res=await collection.deleteOne(query);
-  const res2=await collection.deleteOne(query2);
+  const res=await collection.deleteMany(query);
+  //const res2=await collection.deleteOne(query2);
 //  res=await collection.insertOne(obj);
 //  res=await collection.insertOne(obj2);
   // The "process.env.PORT" is needed to work with Heroku.
