@@ -19,7 +19,7 @@ async function main() {
   db = await MongoClient.connect(process.env.MONGODB_URI || MONGO_URL);
   collection=db.collection('spot-item');
   const query={
-    price:25
+    price:"25"
   };
   const query2={
     _id:"5d09d590d65cd2001730b648"
